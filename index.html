@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>web socket chat</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+	<div id='chat'></div>
+	<div>
+	    <input type="text" id="nameInput" maxlength="12" placeholder="Your name" >
+	    <button id="connectionButton">Connect</button>
+	    <input type="text" id="textInput" placeholder="Write something" disabled="disabled" onkeyup="handleKey(event)"/>
+	</div>
+	<div>
+		<p>Users online : </p>
+		<span id="userlist"> </span>
+	</div>
+	</p>
+    
+    <script src="frontend.js"></script>
+</body>
+</html>
