@@ -63,13 +63,7 @@ function connect() {
         textInput.disabled = true;
         break;
       case "userlist":
-        var list = "";
-        var i;
-
-        for (i = 0; i < msg.users.length; i++) {
-          list += msg.users[i] + " ";
-        }
-        userlist.innerHTML = list;
+        handleUserlistMsg(msg);
         break;
       }
       if (text.length) {
@@ -78,6 +72,26 @@ function connect() {
     };
   }
  
+function handleUserlistMsg(msg) {
+  var i;
+  
+  //clear list
+  while (userlist.firstChild) {
+    userlist.removeChild(userlist.firstChild);
+  }
+
+  //repopulate
+
+  for (i = 0; i < msg.users.length; i++) {
+    var item = document.createElement("span");
+    item.classList.add('useritem');
+    item.appendChild(document.createTextNode(msg.users[i]));
+    //item.addEventListener("click", invite, false);
+
+    userlist.appendChild(item);
+  }
+}
+
 
 function addMessage(txt) {
   chat.innerHTML += txt + '<br>';

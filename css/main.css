@@ -52,3 +52,11 @@ button {
 	margin-top:10px;  
 	height: 60px;       
 }
+
+.useritem {
+	background:#c4a5ff;
+	color:#fff; 
+	padding:5px;
+	margin:3px;
+	border-radius:3px;
+}
